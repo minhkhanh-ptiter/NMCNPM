@@ -18,23 +18,27 @@ Hệ thống mô phỏng quy trình đặt phòng khách sạn, từ khâu tìm 
 ## 🖼️ Các sơ đồ UML & ERD
 
 ### 1. Use Case Diagram
-![Use Case](./images/usecase.png)
+![Use Case](./images/Use_Case_Diagram.png)
 
 ### 2. Sequence Diagram – Đặt phòng
-![Sequence Booking](./images/sequence_booking.png)
+![Sequence Booking](./images/Sequence_Diagram_Booking_online.png)
 
 ### 3. Sequence Diagram – Check-in/Check-out
-![Sequence Checkin](./images/sequence_checkin.png)
+![Sequence Checkin](./images/Sequence_Diagram_Check-in_Check-out.png)
 
 ### 4. ERD (Entity Relationship Diagram)
-![ERD](./images/erd.png)
+![ERD](./images/ERD.png)
 
 ---
 
-## 📂 Cấu trúc dự án
+## 🚀 Công cụ sử dụng
+- Jira: Quản lý Product Backlog, Sprint Planning, Board.
+- Dbdiagram: Thiết kế ERD.
+- PlantUML / Draw.io: Vẽ sơ đồ UML.
+- GitHub: Lưu trữ và quản lý version của các artefact.
 
 ## 👨‍💻 Thông tin
 - Môn học: **Nhập môn Công nghệ Phần mềm**
 - Bài tập: Lab 2
 - Thực hiện: Nguyễn Minh Khánh
-- Trường: Học viện công nghệ bưu chính viễn thông
+- Trường: Học viện Công nghệ Bưu chính Viễn thông
