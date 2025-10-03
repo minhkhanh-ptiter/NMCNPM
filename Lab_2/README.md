@@ -18,16 +18,16 @@ Hệ thống mô phỏng quy trình đặt phòng khách sạn, từ khâu tìm 
 ## 🖼️ Các sơ đồ UML & ERD
 
 ### 1. Use Case Diagram
-![Use Case](./images/Use_Case_Diagram.png)
+![Use Case](./images/Use_Case_Diagram.jpg)
 
 ### 2. Sequence Diagram – Đặt phòng
-![Sequence Booking](./images/Sequence_Diagram_Booking_online.png)
+![Sequence Booking](./images/Sequence_Diagram_Booking_online.jpg)
 
 ### 3. Sequence Diagram – Check-in/Check-out
-![Sequence Checkin](./images/Sequence_Diagram_Check-in_Check-out.png)
+![Sequence Checkin](./images/Sequence_Diagram_Check-in_Check-out.jpg)
 
 ### 4. ERD (Entity Relationship Diagram)
-![ERD](./images/ERD.png)
+![ERD](./images/ERD.jpg)
 
 ---
 
