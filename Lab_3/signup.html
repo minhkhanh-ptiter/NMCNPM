@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign Up</title>
+  <style>
+    body{
+      margin:0;min-height:100svh;display:grid;place-items:center;
+      background:linear-gradient(to bottom,#000 0%,#990000 30%,#e6e6e6 50%,#990000 70%,#000 100%);
+      color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial
+    }
+    .card{
+      width:min(480px,92vw);background:#000;border-radius:16px;
+      box-shadow:0 14px 40px rgba(0,0,0,.28);padding:28px 26px
+    }
+    h1{margin:0 0 10px;text-align:center;font-size:30px}
+    p.lead{margin:0 0 18px;opacity:.9;text-align:center}
+
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .full{grid-column:1/-1}
+
+    .shrink-left{justify-self:end;width:100%}
+    .shrink-right{justify-self:start;width:90%}
+
+    label{display:block;font-size:13px;margin:0 0 6px;color:#fff}
+    input,select{
+      width:100%;padding:12px;border:1px solid #3a3a3a;border-radius:10px;
+      background:#111;color:#fff;font-size:15px
+    }
+    input::placeholder{color:#ddd}
+    input:focus{outline:none;border-color:#c0392b;box-shadow:0 0 0 4px rgba(192,57,43,.25)}
+
+    .row{display:flex;gap:10px;align-items:center;margin-top:8px}
+    .row input[type="checkbox"]{width:auto;accent-color:#c60000}
+
+    .msg{display:none;margin:8px 0 6px;font-size:14px}
+    .msg.error{color:#d93025}
+    .msg.success{color:#1e8e3e}
+
+    .btn{
+      width:100%;padding:12px;border:0;border-radius:24px;background:#c60000;
+      color:#fff;font-weight:700;cursor:pointer;letter-spacing:.3px
+    }
+    .btn:hover{filter:brightness(1.08)}
+
+    .links{margin-top:12px;text-align:center}
+    .links a{color:#1e88e5;text-decoration:none}
+    .links a:hover{text-decoration:underline}
+    
+    :root{
+        --full-side-gap: 12px;
+    }
+
+    .grid > .full > input#fullname,
+    .grid > .field.full .control > input#fullname {
+        width: calc(100% - (var(--full-side-gap) * 2));
+        display: block;
+        margin: 0 auto;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 18px;
+        row-gap: 14px;
+    }
+    .full {
+        grid-column: 1 / -1;
+    }
+
+    .shrink-left, .shrink-right {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .full > input,
+    .full > select,
+    .full .btn {
+        width: 100%;
+        margin: 0;
+        display: block;
+    }
+
+    .shrink-left input,
+    .shrink-right input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .control svg {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0.8;
+        color: #cfcfcf;
+        pointer-events: none;
+    }
+
+  </style>
+</head>
+<body>
+  <main class="card" aria-label="Sign Up Card">
+    <h1>Create Account</h1>
+    <p class="lead">Fill in the information below to create an account</p>
+
+    <form id="signup-form" novalidate>
+      <div class="grid">
+
+        <div class="full">
+          <label for="fullname">Full name</label>
+          <input id="fullname" type="text" placeholder="Type your full name" autocomplete="name">
+        </div>
+
+        <div class="shrink-left">
+          <label for="username">Username <span style="color:#d93025">*</span></label>
+          <input id="username" type="text" placeholder="Type your username" autocomplete="username">
+        </div>
+
+        <div class="shrink-right">
+          <label for="email">Email <span style="color:#d93025">*</span></label>
+          <input id="email" type="email" placeholder="Type your email" autocomplete="email">
+        </div>
+
+        <div class="shrink-left">
+          <label for="password">Password <span style="color:#d93025">*</span></label>
+          <input id="password" type="password" placeholder="Create a password" autocomplete="new-password">
+        </div>
+
+        <div class="shrink-right">
+          <label for="confirm">Confirm password <span style="color:#d93025">*</span></label>
+          <input id="confirm" type="password" placeholder="Re-enter password" autocomplete="new-password">
+        </div>
+
+        <div class="full">
+          <label for="role">Role (optional)</label>
+          <select id="role">
+            <option value="">Select your role</option>
+            <option>Student</option>
+            <option>Staff</option>
+            <option>Manager</option>
+          </select>
+        </div>
+
+        <div class="full row">
+          <input id="terms" type="checkbox">
+          <label for="terms" style="margin:0">I agree to the Terms & Privacy Policy <span style="color:#d93025">*</span></label>
+        </div>
+
+        <p id="msg" class="msg" role="alert"></p>
+
+        <div class="full">
+          <button class="btn" type="button" onclick="doSignup()">SIGN UP</button>
+        </div>
+      </div>
+    </form>
+
+    <div class="links">
+      <a href="login.html">← Back to Login</a>
+    </div>
+  </main>
+
+  <script>
+    function doSignup(){
+      const fullname = document.getElementById('fullname').value.trim();
+      const username = document.getElementById('username').value.trim();
+      const email    = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const confirm  = document.getElementById('confirm').value.trim();
+      const terms    = document.getElementById('terms').checked;
+      const msgEl    = document.getElementById('msg');
+
+      msgEl.style.display = 'none';
+      msgEl.className = 'msg';
+      msgEl.textContent = '';
+
+      const all = [fullname, username, email, password, confirm];
+
+      if (all.every(v => v === '')) {
+        showMsg('Please enter your infomation!', false);
+        return;
+      }
+
+      if (all.some(v => v === '')) {
+        showMsg('Missing information, please check again!', false);
+        return;
+      }
+
+      if (password !== confirm) {
+        showMsg('Please confirm the correct password!', false);
+        return;
+      }
+
+      if (!terms) {
+        showMsg('You must agree to the Terms & Privacy Policy.', false);
+        return;
+      }
+
+      try {
+        localStorage.setItem('signup_user', JSON.stringify({ username, password }));
+      } catch (e) { }
+
+      showMsg('Registration successful. Please return to login page!', true);
+    }
+
+    function showMsg(text, isSuccess){
+      const msgEl = document.getElementById('msg');
+      msgEl.textContent = text;
+      msgEl.classList.add(isSuccess ? 'success' : 'error');
+      msgEl.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
