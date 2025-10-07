@@ -1,0 +1,23 @@
+👋 Hello, my name is Khánh Minh
+
+I am currently a student at the Posts and Telecommunications Institute of Technology (PTIT).
+
+🔹 Interests
+
+* Software requirements and system analysis
+* Web and mobile application development
+* Artificial Intelligence and Machine Learning
+
+🔹 Skills
+
+* Programming languages: C++, Python, Java, JavaScript, SQL
+* Tools: Git, Visual Studio Code, Jira, MySQL
+* Development process: Agile - Scrum, Waterfall
+
+🔹 Goals
+
+* Become a professional software engineer
+* Contribute to real-world software projects
+* Continuously learn new technologies and IT trends
+
+✨ Thank you for taking the time to read my introduction! ✨
